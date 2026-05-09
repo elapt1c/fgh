@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOID FORUM :: New Thread</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💀</text></svg>">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <span class="skull">💀</span>
+        <h1>VOID FORUM</h1>
+        <span class="version">v3.1.7</span>
+      </a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="index.html">Forum</a></li>
+        <li><a href="category.html" class="active">Threads</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+      <div class="navbar-auth" id="authButtons">
+        <a href="login.html" class="btn">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleNav()">☰</button>
+    </div>
+  </nav>
+
+  <div class="main-container">
+    <div class="content-area">
+
+      <!-- BREADCRUMB -->
+      <div class="breadcrumb">
+        <a href="index.html">Forum</a>
+        <span class="sep">›</span>
+        <a href="category.html">General Discussion</a>
+        <span class="sep">›</span>
+        <span>New Thread</span>
+      </div>
+
+      <div class="new-thread-form">
+        <h2>+ Create New Thread</h2>
+
+        <form onsubmit="handleNewThread(event)">
+          <div class="form-group">
+            <label for="threadCategory">Category</label>
+            <select id="threadCategory" required>
+              <option value="">Select a category...</option>
+              <option value="announcements">📡 Announcements</option>
+              <option value="general" selected>💬 General Discussion</option>
+              <option value="introductions">👤 Introductions</option>
+              <option value="programming">⌨️ Programming & Development</option>
+              <option value="security">🔒 Security & Privacy</option>
+              <option value="networking">🌐 Networking & Infrastructure</option>
+              <option value="crypto">₿ Cryptography & Blockchain</option>
+              <option value="marketplace">🏪 Marketplace</option>
+              <option value="offtopic">🗣️ Off-Topic Lounge</option>
+              <option value="support">🛠️ Technical Support</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="threadTitle">Thread Title</label>
+            <input type="text" id="threadTitle" placeholder="Enter a descriptive title..." required minlength="5" maxlength="200">
+          </div>
+
+          <div class="form-group">
+            <label for="threadTags">Tags (comma separated)</label>
+            <input type="text" id="threadTags" placeholder="#encryption, #privacy, #tutorial">
+          </div>
+
+          <div class="form-group">
+            <label for="threadContent">Content</label>
+            <div style="display:flex; gap:0.5rem; margin-bottom:0.5rem;">
+              <button type="button" class="btn" style="padding:0.3rem 0.6rem; font-size:0.7rem;" onclick="insertFormat('**','**')">B</button>
+              <button type="button" class="btn" style="padding:0.3rem 0.6rem; font-size:0.7rem; font-style:italic;" onclick="insertFormat('*','*')">I</button>
+              <button type="button" class="btn" style="padding:0.3rem 0.6rem; font-size:0.7rem;" onclick="insertFormat('`','`')">Code</button>
+              <button type="button" class="btn" style="padding:0.3rem 0.6rem; font-size:0.7rem;" onclick="insertFormat('```\n','\n```')">Block</button>
+              <button type="button" class="btn" style="padding:0.3rem 0.6rem; font-size:0.7rem;" onclick="insertFormat('> ','')">Quote</button>
+              <button type="button" class="btn" style="padding:0.3rem 0.6rem; font-size:0.7rem;" onclick="insertFormat('[link text](',')')">Link</button>
+            </div>
+            <textarea id="threadContent" placeholder="Write your post content here...&#10;&#10;Markdown formatting is supported.&#10;Use code blocks for sharing code snippets.&#10;&#10;Remember: Do not share personal information." style="width:100%; min-height:300px; background:var(--bg-primary); border:1px solid var(--border-color); color:var(--text-primary); font-family:var(--font-mono); font-size:0.85rem; padding:1rem; resize:vertical; outline:none;" required></textarea>
+          </div>
+
+          <div class="form-group" style="display:flex; align-items:center; gap:0.75rem;">
+            <input type="checkbox" id="threadNotify" style="width:auto; accent-color:var(--accent-green);" checked>
+            <label for="threadNotify" style="margin-bottom:0; cursor:pointer;">Notify me of replies</label>
+          </div>
+
+          <div style="display:flex; justify-content:flex-end; gap:1rem;">
+            <a href="category.html" class="btn">Cancel</a>
+            <button type="button" class="btn" onclick="previewThread()">Preview</button>
+            <button type="submit" class="btn btn-primary">Create Thread →</button>
+          </div>
+        </form>
+
+        <div id="threadError" style="display:none; margin-top:1rem; padding:0.75rem; border:1px solid var(--accent-red); color:var(--accent-red); font-size:0.8rem; text-align:center;"></div>
+        <div id="threadSuccess" style="display:none; margin-top:1rem; padding:0.75rem; border:1px solid var(--accent-green); color:var(--accent-green); font-size:0.8rem; text-align:center;"></div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">📝 Posting Guidelines</div>
+        <div class="sidebar-widget-body">
+          <ul class="sidebar-rules">
+            <li><span class="rule-num">•</span> Use a descriptive title</li>
+            <li><span class="rule-num">•</span> Choose the correct category</li>
+            <li><span class="rule-num">•</span> Search before posting</li>
+            <li><span class="rule-num">•</span> Use code blocks for code</li>
+            <li><span class="rule-num">•</span> No personal information</li>
+            <li><span class="rule-num">•</span> Be respectful to others</li>
+            <li><span class="rule-num">•</span> Stay on topic</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">✍️ Markdown Help</div>
+        <div class="sidebar-widget-body" style="font-size:0.75rem; color:var(--text-muted); line-height:2; font-family:var(--font-mono);">
+          <div><span style="color:var(--text-secondary);">**bold**</span> → <strong style="color:var(--text-primary);">bold</strong></div>
+          <div><span style="color:var(--text-secondary);">*italic*</span> → <em style="color:var(--text-primary);">italic</em></div>
+          <div><span style="color:var(--text-secondary);">`code`</span> → <code style="color:var(--accent-green);">code</code></div>
+          <div><span style="color:var(--text-secondary);">```code block```</span></div>
+          <div><span style="color:var(--text-secondary);">> blockquote</span></div>
+          <div><span style="color:var(--text-secondary);">[text](url)</span> → link</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="brand">VOID FORUM</div>
+        <div>Established 2019 · All rights reserved</div>
+        <div>Encrypted · Decentralized · Anonymous</div>
+      </div>
+      <div class="footer-right">
+        <div><a href="#">Terms of Service</a> · <a href="#">PGP Keys</a> · <a href="#">Canary</a></div>
+        <div>Server Time: <span id="serverTime">--:--:--</span> UTC</div>
+        <div style="color:var(--text-muted);">Connection: <span style="color:var(--accent-green);">■</span> Encrypted</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

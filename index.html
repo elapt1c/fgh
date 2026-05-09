@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOID FORUM :: Underground Network</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💀</text></svg>">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <span class="skull">💀</span>
+        <h1>VOID FORUM</h1>
+        <span class="version">v3.1.7</span>
+      </a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="index.html" class="active">Forum</a></li>
+        <li><a href="category.html">Threads</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+      <div class="navbar-auth" id="authButtons">
+        <a href="login.html" class="btn">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleNav()">☰</button>
+    </div>
+  </nav>
+
+  <!-- BANNER -->
+  <div class="main-container" style="display:block; margin-bottom:0; padding-bottom:0;">
+    <div class="banner">
+      <span class="banner-icon">⚠</span>
+      <div class="banner-text">
+        <strong>System Notice:</strong> All connections are encrypted and routed through multiple proxies. Maintain operational security at all times. New members must read the <a href="#rules">forum rules</a> before posting.
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="main-container" style="display:block; padding-top:0; padding-bottom:0;">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-value" id="totalThreads">1,247</div>
+        <div class="stat-label">Threads</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="totalPosts">18,392</div>
+        <div class="stat-label">Posts</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="totalMembers">3,891</div>
+        <div class="stat-label">Members</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="onlineNow">47</div>
+        <div class="stat-label">Online Now</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-container">
+    <div class="content-area">
+
+      <!-- CATEGORY GROUP: MAIN -->
+      <div class="category-group">
+        <div class="section-header">
+          <h2>// Main Categories</h2>
+          <span class="line"></span>
+        </div>
+
+        <div class="category-card" onclick="location.href='category.html?cat=announcements'">
+          <div class="category-icon">📡</div>
+          <div class="category-info">
+            <h3><a href="category.html?cat=announcements">Announcements</a></h3>
+            <p>Official communications from the administration. Read-only for most users.</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">23</span><span class="label">Threads</span></div>
+            <div><span class="count">156</span><span class="label">Posts</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title">Server Migration Complete</div>
+            <div class="latest-meta">by <span style="color:var(--accent-cyan)">admin</span> · 2h ago</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='category.html?cat=general'">
+          <div class="category-icon">💬</div>
+          <div class="category-info">
+            <h3><a href="category.html?cat=general">General Discussion</a></h3>
+            <p>Open forum for all topics. Introduce yourself or discuss anything not covered elsewhere.</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">412</span><span class="label">Threads</span></div>
+            <div><span class="count">5,891</span><span class="label">Posts</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title">New encryption standards</div>
+            <div class="latest-meta">by <span style="color:var(--accent-cyan)">cipher_ghost</span> · 15m ago</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='category.html?cat=introductions'">
+          <div class="category-icon">👤</div>
+          <div class="category-info">
+            <h3><a href="category.html?cat=introductions">Introductions</a></h3>
+            <p>New to the network? Introduce yourself here. All new members must post before accessing other areas.</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">891</span><span class="label">Threads</span></div>
+            <div><span class="count">2,340</span><span class="label">Posts</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title">Just joined, hello...</div>
+            <div class="latest-meta">by <span style="color:var(--accent-cyan)">n3w_us3r</span> · 8m ago</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATEGORY GROUP: TECHNICAL -->
+      <div class="category-group">
+        <div class="section-header">
+          <h2>// Technical</h2>
+          <span class="line"></span>
+        </div>
+
+        <div class="category-card" onclick="location.href='category.html?cat=programming'">
+          <div class="category-icon">⌨️</div>
+          <div class="category-info">
+            <h3><a href="category.html?cat=programming">Programming & Development</a></h3>
+            <p>Code sharing, development tools, scripts, and programming discussions.</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">287</span><span class="label">Threads</span></div>
+            <div><span class="count">3,412</span><span class="label">Posts</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title">Python automation script</div>
+            <div class="latest-meta">by <span style="color:var(--accent-cyan)">d3v_null</span> · 1h ago</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='category.html?cat=security'">
+          <div class="category-icon">🔒</div>
+          <div class="category-info">
+            <h3><a href="category.html?cat=security">Security & Privacy</a></h3>
+            <p>Encryption, anonymity tools, VPNs, secure communication methods, and OPSEC.</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">198</span><span class="label">Threads</span></div>
+            <div><span class="count">2,867</span><span class="label">Posts</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title">Best VPN configs 2026</div>
+            <div class="latest-meta">by <span style="color:var(--accent-cyan)">phantom_x</span> · 30m ago</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='category.html?cat=networking'">
+          <div class="category-icon">🌐</div>
+          <div class="category-info">
+            <h3><a href="category.html?cat=networking">Networking & Infrastructure</a></h3>
+            <p>Server administration, network configurations, hosting, and infrastructure topics.</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">134</span><span class="label">Threads</span></div>
+            <div><span class="count">1,456</span><span class="label">Posts</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title">Tor relay setup guide</div>
+            <div class="latest-meta">by <span style="color:var(--accent-cyan)">node_runner</span> · 3h ago</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='category.html?cat=crypto'">
+          <div class="category-icon">₿</div>
+          <div class="category-info">
+            <h3><a href="category.html?cat=crypto">Cryptography & Blockchain</a></h3>
+            <p>Cryptographic algorithms, blockchain technology, digital currencies, and smart contracts.</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">156</span><span class="label">Threads</span></div>
+            <div><span class="count">1,890</span><span class="label">Posts</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title">Zero-knowledge proofs ELI5</div>
+            <div class="latest-meta">by <span style="color:var(--accent-cyan)">zk_wizard</span> · 45m ago</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATEGORY GROUP: COMMUNITY -->
+      <div class="category-group">
+        <div class="section-header">
+          <h2>// Community</h2>
+          <span class="line"></span>
+        </div>
+
+        <div class="category-card" onclick="location.href='category.html?cat=marketplace'">
+          <div class="category-icon">🏪</div>
+          <div class="category-info">
+            <h3><a href="category.html?cat=marketplace">Marketplace</a></h3>
+            <p>Buy, sell, or trade digital goods, services, and resources. Escrow required for all transactions.</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">89</span><span class="label">Threads</span></div>
+            <div><span class="count">567</span><span class="label">Posts</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title">[WTS] Custom scripts</div>
+            <div class="latest-meta">by <span style="color:var(--accent-cyan)">vendor_x</span> · 2h ago</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='category.html?cat=offtopic'">
+          <div class="category-icon">🗣️</div>
+          <div class="category-info">
+            <h3><a href="category.html?cat=offtopic">Off-Topic Lounge</a></h3>
+            <p>Anything goes (within the rules). Memes, random discussions, and entertainment.</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">345</span><span class="label">Threads</span></div>
+            <div><span class="count">4,201</span><span class="label">Posts</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title">Best sci-fi movies?</div>
+            <div class="latest-meta">by <span style="color:var(--accent-cyan)">darkm00n</span> · 5m ago</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='category.html?cat=support'">
+          <div class="category-icon">🛠️</div>
+          <div class="category-info">
+            <h3><a href="category.html?cat=support">Technical Support</a></h3>
+            <p>Need help? Ask technical questions, report bugs, or request assistance from the community.</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">201</span><span class="label">Threads</span></div>
+            <div><span class="count">1,678</span><span class="label">Posts</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title">Can't connect to IRC</div>
+            <div class="latest-meta">by <span style="color:var(--accent-cyan)">lost_signal</span> · 20m ago</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- ONLINE USERS -->
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">⚡ Online Users</div>
+        <div class="sidebar-widget-body">
+          <div class="online-user"><span class="online-dot"></span> <span class="username">cipher_ghost</span></div>
+          <div class="online-user"><span class="online-dot"></span> <span class="username">phantom_x</span></div>
+          <div class="online-user"><span class="online-dot"></span> <span class="username">d3v_null</span></div>
+          <div class="online-user"><span class="online-dot"></span> <span class="username">node_runner</span></div>
+          <div class="online-user"><span class="online-dot"></span> <span class="username">zk_wizard</span></div>
+          <div class="online-user"><span class="online-dot"></span> <span class="username">darkm00n</span></div>
+          <div class="online-user"><span class="online-dot"></span> <span class="username">v0id_walker</span></div>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-top:0.5rem;">
+            and 40 more lurking...
+          </div>
+        </div>
+      </div>
+
+      <!-- RULES -->
+      <div class="sidebar-widget" id="rules">
+        <div class="sidebar-widget-header">📜 Forum Rules</div>
+        <div class="sidebar-widget-body">
+          <ul class="sidebar-rules">
+            <li><span class="rule-num">01</span> No personal information sharing</li>
+            <li><span class="rule-num">02</span> Use encryption for sensitive data</li>
+            <li><span class="rule-num">03</span> No spam or commercial advertising</li>
+            <li><span class="rule-num">04</span> Respect other members</li>
+            <li><span class="rule-num">05</span> Use escrow for all transactions</li>
+            <li><span class="rule-num">06</span> No law enforcement discussion</li>
+            <li><span class="rule-num">07</span> English language only</li>
+            <li><span class="rule-num">08</span> Report suspicious activity</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RECENT ACTIVITY -->
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">🕐 Recent Activity</div>
+        <div class="sidebar-widget-body" style="font-size:0.8rem;">
+          <div style="padding:0.4rem 0; border-bottom:1px solid var(--border-color);">
+            <span style="color:var(--accent-cyan)">cipher_ghost</span>
+            <span style="color:var(--text-muted)"> posted in </span>
+            <a href="thread.html">Encryption thread</a>
+            <div style="color:var(--text-muted); font-size:0.7rem;">2 minutes ago</div>
+          </div>
+          <div style="padding:0.4rem 0; border-bottom:1px solid var(--border-color);">
+            <span style="color:var(--accent-cyan)">n3w_us3r</span>
+            <span style="color:var(--text-muted)"> created </span>
+            <a href="thread.html">Introduction post</a>
+            <div style="color:var(--text-muted); font-size:0.7rem;">8 minutes ago</div>
+          </div>
+          <div style="padding:0.4rem 0; border-bottom:1px solid var(--border-color);">
+            <span style="color:var(--accent-cyan)">phantom_x</span>
+            <span style="color:var(--text-muted)"> replied to </span>
+            <a href="thread.html">VPN discussion</a>
+            <div style="color:var(--text-muted); font-size:0.7rem;">15 minutes ago</div>
+          </div>
+          <div style="padding:0.4rem 0;">
+            <span style="color:var(--accent-cyan)">d3v_null</span>
+            <span style="color:var(--text-muted)"> posted in </span>
+            <a href="thread.html">Python scripts</a>
+            <div style="color:var(--text-muted); font-size:0.7rem;">1 hour ago</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SYSTEM INFO -->
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">🖥️ System Status</div>
+        <div class="sidebar-widget-body" style="font-size:0.75rem; color:var(--text-muted); line-height:2;">
+          <div>Server: <span style="color:var(--accent-green)">ONLINE</span></div>
+          <div>Uptime: <span style="color:var(--text-secondary)" id="uptime">47d 13h 22m</span></div>
+          <div>Load: <span style="color:var(--accent-amber)">0.42</span></div>
+          <div>Tor Nodes: <span style="color:var(--accent-green)">12 active</span></div>
+          <div>Last Backup: <span style="color:var(--text-secondary)">2h ago</span></div>
+          <div>Encryption: <span style="color:var(--accent-green)">AES-256-GCM</span></div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="brand">VOID FORUM</div>
+        <div>Established 2019 · All rights reserved</div>
+        <div>Encrypted · Decentralized · Anonymous</div>
+      </div>
+      <div class="footer-right">
+        <div><a href="#">Terms of Service</a> · <a href="#">PGP Keys</a> · <a href="#">Canary</a></div>
+        <div>Server Time: <span id="serverTime">--:--:--</span> UTC</div>
+        <div style="color:var(--text-muted);">Connection: <span style="color:var(--accent-green);">■</span> Encrypted</div>
+      </div>
+    </div>
+    <div class="footer-ascii">
+ ██▒   █▓ ▒█████   ██▓▓█████▄
+▓██░   █▒▒██▒  ██▒▓██▒▒██▀ ██▌
+ ▓██  █▒░▒██░  ██▒▒██▒░██   █▌
+  ▒██ █░░▒██   ██░░██░░▓█▄   ▌
+   ▒▀█░  ░ ████▓▒░░██░░▒████▓
+   ░ ▐░  ░ ▒░▒░▒░ ░▓   ▒▒▓  ▒
+   ░ ░░    ░ ▒ ▒░  ▒ ░ ░ ▒  ▒
+     ░   ░ ░ ░ ▒   ▒ ░ ░ ░  ░
+      ░       ░ ░   ░     ░
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

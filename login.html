@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOID FORUM :: Access Terminal</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💀</text></svg>">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <span class="skull">💀</span>
+        <h1>VOID FORUM</h1>
+        <span class="version">v3.1.7</span>
+      </a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="index.html">Forum</a></li>
+        <li><a href="category.html">Threads</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+      <div class="navbar-auth" id="authButtons">
+        <a href="login.html" class="btn" style="border-color:var(--accent-green); color:var(--accent-green);">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleNav()">☰</button>
+    </div>
+  </nav>
+
+  <div class="auth-container">
+    <div class="auth-box">
+      <h2>Access Terminal</h2>
+      <p class="auth-subtitle">Authenticate to access the network</p>
+
+      <form onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label for="username">Username / Handle</label>
+          <input type="text" id="username" placeholder="Enter your handle..." autocomplete="off" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Passphrase</label>
+          <input type="password" id="password" placeholder="Enter passphrase..." required>
+        </div>
+
+        <div class="form-group" style="display:flex; align-items:center; gap:0.75rem;">
+          <input type="checkbox" id="remember" style="width:auto; accent-color:var(--accent-green);">
+          <label for="remember" style="margin-bottom:0; cursor:pointer;">Remember this device</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Authenticate →</button>
+      </form>
+
+      <div id="loginError" style="display:none; margin-top:1rem; padding:0.75rem; border:1px solid var(--accent-red); color:var(--accent-red); font-size:0.8rem; text-align:center;"></div>
+
+      <div id="loginSuccess" style="display:none; margin-top:1rem; padding:0.75rem; border:1px solid var(--accent-green); color:var(--accent-green); font-size:0.8rem; text-align:center;"></div>
+
+      <div class="auth-links">
+        <p>No account? <a href="register.html">Create one →</a></p>
+        <p style="margin-top:0.5rem;"><a href="#" style="color:var(--text-muted);">Forgot passphrase?</a></p>
+      </div>
+
+      <div class="auth-warning">
+        ⚠ WARNING: All login attempts are logged. Multiple failed attempts will trigger a temporary lockout. Use a secure connection at all times. Never share your credentials.
+      </div>
+
+      <!-- Terminal-style decoration -->
+      <div style="margin-top:1.5rem; font-size:0.7rem; color:var(--text-muted); font-family:var(--font-mono); line-height:1.6;">
+        <div>> Establishing secure connection...</div>
+        <div>> TLS 1.3 handshake complete</div>
+        <div>> Certificate pinning: <span style="color:var(--accent-green)">VERIFIED</span></div>
+        <div>> Ready for authentication</div>
+        <div style="animation: pulse 1s ease-in-out infinite;">█</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

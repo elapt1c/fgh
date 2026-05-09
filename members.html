@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOID FORUM :: Members Directory</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💀</text></svg>">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <span class="skull">💀</span>
+        <h1>VOID FORUM</h1>
+        <span class="version">v3.1.7</span>
+      </a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="index.html">Forum</a></li>
+        <li><a href="category.html">Threads</a></li>
+        <li><a href="members.html" class="active">Members</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+      <div class="navbar-auth" id="authButtons">
+        <a href="login.html" class="btn">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleNav()">☰</button>
+    </div>
+  </nav>
+
+  <div class="main-container">
+    <div class="content-area">
+
+      <!-- BREADCRUMB -->
+      <div class="breadcrumb">
+        <a href="index.html">Forum</a>
+        <span class="sep">›</span>
+        <span>Members Directory</span>
+      </div>
+
+      <div class="section-header">
+        <h2>👥 Members Directory</h2>
+        <span class="line"></span>
+      </div>
+
+      <!-- SEARCH -->
+      <div style="margin-bottom:1.5rem;">
+        <input type="text" placeholder="Search members..." style="width:100%; padding:0.75rem 1rem; background:var(--bg-primary); border:1px solid var(--border-color); color:var(--text-primary); font-family:var(--font-mono); font-size:0.85rem; outline:none;" onfocus="this.style.borderColor='var(--accent-green)'" onblur="this.style.borderColor='var(--border-color)'">
+      </div>
+
+      <!-- MEMBER CARDS -->
+      <div style="display:grid; gap:2px;">
+
+        <div class="category-card" onclick="location.href='profile.html'" style="cursor:pointer;">
+          <div class="category-icon" style="font-size:1.8rem;">👑</div>
+          <div class="category-info">
+            <h3><a href="profile.html" style="color:var(--accent-red);">admin</a></h3>
+            <p style="color:var(--accent-red);">Administrator · Forum Creator</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">3,456</span><span class="label">Posts</span></div>
+            <div><span class="count" style="color:var(--accent-green);">+2,891</span><span class="label">Rep</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title" style="color:var(--accent-green);">● Online</div>
+            <div class="latest-meta">Since 2019</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='profile.html'" style="cursor:pointer;">
+          <div class="category-icon" style="font-size:1.8rem;">🧙</div>
+          <div class="category-info">
+            <h3><a href="profile.html" style="color:var(--accent-amber);">zk_wizard</a></h3>
+            <p style="color:var(--accent-amber);">Moderator · Cryptography Section</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">2,156</span><span class="label">Posts</span></div>
+            <div><span class="count" style="color:var(--accent-green);">+1,567</span><span class="label">Rep</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title" style="color:var(--accent-green);">● Online</div>
+            <div class="latest-meta">Since 2020</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='profile.html'" style="cursor:pointer;">
+          <div class="category-icon" style="font-size:1.8rem;">👻</div>
+          <div class="category-info">
+            <h3><a href="profile.html">cipher_ghost</a></h3>
+            <p>Elite Member · Encryption Specialist</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">1,247</span><span class="label">Posts</span></div>
+            <div><span class="count" style="color:var(--accent-green);">+892</span><span class="label">Rep</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title" style="color:var(--accent-green);">● Online</div>
+            <div class="latest-meta">Since 2021</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='profile.html'" style="cursor:pointer;">
+          <div class="category-icon" style="font-size:1.8rem;">🎭</div>
+          <div class="category-info">
+            <h3><a href="profile.html">phantom_x</a></h3>
+            <p>Senior Member · OPSEC Specialist</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">834</span><span class="label">Posts</span></div>
+            <div><span class="count" style="color:var(--accent-green);">+612</span><span class="label">Rep</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title" style="color:var(--accent-green);">● Online</div>
+            <div class="latest-meta">Since 2022</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='profile.html'" style="cursor:pointer;">
+          <div class="category-icon" style="font-size:1.8rem;">🌐</div>
+          <div class="category-info">
+            <h3><a href="profile.html">node_runner</a></h3>
+            <p>Senior Member · Infrastructure Expert</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">678</span><span class="label">Posts</span></div>
+            <div><span class="count" style="color:var(--accent-green);">+445</span><span class="label">Rep</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title" style="color:var(--accent-green);">● Online</div>
+            <div class="latest-meta">Since 2022</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='profile.html'" style="cursor:pointer;">
+          <div class="category-icon" style="font-size:1.8rem;">💻</div>
+          <div class="category-info">
+            <h3><a href="profile.html">d3v_null</a></h3>
+            <p>Member · Python Developer</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">456</span><span class="label">Posts</span></div>
+            <div><span class="count" style="color:var(--accent-green);">+234</span><span class="label">Rep</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title" style="color:var(--accent-green);">● Online</div>
+            <div class="latest-meta">Since 2023</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='profile.html'" style="cursor:pointer;">
+          <div class="category-icon" style="font-size:1.8rem;">🌙</div>
+          <div class="category-info">
+            <h3><a href="profile.html">darkm00n</a></h3>
+            <p>Member · System Administrator</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">345</span><span class="label">Posts</span></div>
+            <div><span class="count" style="color:var(--accent-green);">+189</span><span class="label">Rep</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title" style="color:var(--text-muted);">○ Offline</div>
+            <div class="latest-meta">Since 2023</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='profile.html'" style="cursor:pointer;">
+          <div class="category-icon" style="font-size:1.8rem;">🚶</div>
+          <div class="category-info">
+            <h3><a href="profile.html">v0id_walker</a></h3>
+            <p>Member · Network Analyst</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">234</span><span class="label">Posts</span></div>
+            <div><span class="count" style="color:var(--accent-green);">+156</span><span class="label">Rep</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title" style="color:var(--text-muted);">○ Offline</div>
+            <div class="latest-meta">Since 2023</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='profile.html'" style="cursor:pointer;">
+          <div class="category-icon" style="font-size:1.8rem;">🏪</div>
+          <div class="category-info">
+            <h3><a href="profile.html">vendor_x</a></h3>
+            <p>Member · Verified Vendor</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">123</span><span class="label">Posts</span></div>
+            <div><span class="count" style="color:var(--accent-green);">+67</span><span class="label">Rep</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title" style="color:var(--text-muted);">○ Offline</div>
+            <div class="latest-meta">Since 2024</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='profile.html'" style="cursor:pointer;">
+          <div class="category-icon" style="font-size:1.8rem;">📡</div>
+          <div class="category-info">
+            <h3><a href="profile.html">lost_signal</a></h3>
+            <p>Member · Linux Enthusiast</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">89</span><span class="label">Posts</span></div>
+            <div><span class="count" style="color:var(--accent-green);">+34</span><span class="label">Rep</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title" style="color:var(--text-muted);">○ Offline</div>
+            <div class="latest-meta">Since 2024</div>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="location.href='profile.html'" style="cursor:pointer;">
+          <div class="category-icon" style="font-size:1.8rem;">👶</div>
+          <div class="category-info">
+            <h3><a href="profile.html" style="color:var(--accent-cyan);">n3w_us3r</a></h3>
+            <p style="color:var(--accent-cyan);">New Member</p>
+          </div>
+          <div class="category-stats">
+            <div><span class="count">3</span><span class="label">Posts</span></div>
+            <div><span class="count" style="color:var(--accent-green);">+1</span><span class="label">Rep</span></div>
+          </div>
+          <div class="category-latest">
+            <div class="latest-title" style="color:var(--accent-green);">● Online</div>
+            <div class="latest-meta">Since 2026</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="pagination">
+        <span class="active">1</span>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">...</a>
+        <a href="#">39</a>
+        <a href="#">Next ›</a>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">📊 Member Stats</div>
+        <div class="sidebar-widget-body" style="font-size:0.8rem; color:var(--text-muted); line-height:2;">
+          <div>Total Members: <span style="color:var(--accent-green)">3,891</span></div>
+          <div>Online Now: <span style="color:var(--accent-green)">47</span></div>
+          <div>Newest: <span style="color:var(--accent-cyan)">n3w_us3r</span></div>
+          <div>Most Active: <span style="color:var(--accent-cyan)">admin</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">🏅 Rank Hierarchy</div>
+        <div class="sidebar-widget-body" style="font-size:0.8rem; line-height:2.2;">
+          <div><span style="color:var(--accent-red);">■</span> Administrator</div>
+          <div><span style="color:var(--accent-amber);">■</span> Moderator</div>
+          <div><span style="color:var(--accent-green);">■</span> Elite Member (1000+ posts)</div>
+          <div><span style="color:var(--accent-cyan);">■</span> Senior Member (500+ posts)</div>
+          <div><span style="color:var(--text-secondary);">■</span> Member (50+ posts)</div>
+          <div><span style="color:var(--text-muted);">■</span> New Member</div>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">🔍 Filter</div>
+        <div class="sidebar-widget-body">
+          <select style="width:100%; padding:0.5rem; background:var(--bg-primary); border:1px solid var(--border-color); color:var(--text-primary); font-family:var(--font-mono); font-size:0.8rem; margin-bottom:0.5rem; outline:none;">
+            <option>All Ranks</option>
+            <option>Administrators</option>
+            <option>Moderators</option>
+            <option>Elite Members</option>
+            <option>Senior Members</option>
+            <option>Members</option>
+            <option>New Members</option>
+          </select>
+          <select style="width:100%; padding:0.5rem; background:var(--bg-primary); border:1px solid var(--border-color); color:var(--text-primary); font-family:var(--font-mono); font-size:0.8rem; outline:none;">
+            <option>Sort by Posts</option>
+            <option>Sort by Reputation</option>
+            <option>Sort by Join Date</option>
+            <option>Sort by Last Active</option>
+          </select>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="brand">VOID FORUM</div>
+        <div>Established 2019 · All rights reserved</div>
+        <div>Encrypted · Decentralized · Anonymous</div>
+      </div>
+      <div class="footer-right">
+        <div><a href="#">Terms of Service</a> · <a href="#">PGP Keys</a> · <a href="#">Canary</a></div>
+        <div>Server Time: <span id="serverTime">--:--:--</span> UTC</div>
+        <div style="color:var(--text-muted);">Connection: <span style="color:var(--accent-green);">■</span> Encrypted</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

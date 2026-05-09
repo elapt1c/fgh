@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOID FORUM :: Thread View</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💀</text></svg>">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <span class="skull">💀</span>
+        <h1>VOID FORUM</h1>
+        <span class="version">v3.1.7</span>
+      </a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="index.html">Forum</a></li>
+        <li><a href="category.html" class="active">Threads</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+      <div class="navbar-auth" id="authButtons">
+        <a href="login.html" class="btn">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleNav()">☰</button>
+    </div>
+  </nav>
+
+  <div class="main-container">
+    <div class="content-area">
+
+      <!-- BREADCRUMB -->
+      <div class="breadcrumb">
+        <a href="index.html">Forum</a>
+        <span class="sep">›</span>
+        <a href="category.html">General Discussion</a>
+        <span class="sep">›</span>
+        <span>New encryption standards discussion</span>
+      </div>
+
+      <div class="thread-list-header" style="margin-bottom:1.5rem;">
+        <h2 style="font-family:var(--font-terminal); color:var(--text-primary); font-size:1.2rem; letter-spacing:1px;">
+          New encryption standards discussion — what are you using?
+        </h2>
+      </div>
+
+      <!-- POST 1 (OP) -->
+      <div class="post op">
+        <div class="post-sidebar">
+          <div class="post-avatar">👻</div>
+          <div class="post-username">cipher_ghost</div>
+          <div class="post-rank">Elite Member</div>
+          <div class="post-user-stats">
+            <span>Posts: 1,247</span>
+            <span>Rep: <span style="color:var(--accent-green)">+892</span></span>
+            <span>Joined: 2021</span>
+            <span style="color:var(--accent-green);">● Online</span>
+          </div>
+        </div>
+        <div class="post-content-area">
+          <div class="post-header">
+            <span>Posted 2 hours ago · #1</span>
+            <div class="post-actions">
+              <a href="#">Quote</a>
+              <a href="#">Report</a>
+            </div>
+          </div>
+          <div class="post-body">
+            <p>With the recent developments in quantum computing, I've been rethinking my encryption stack. Currently running:</p>
+            <pre><code>Primary: AES-256-GCM
+Key Exchange: X25519
+Signatures: Ed25519
+Hash: BLAKE3
+PQ Layer: CRYSTALS-Kyber (experimental)</code></pre>
+            <p>The post-quantum stuff is still experimental but I think we need to start migrating now before Q-day hits. Anyone else been looking into lattice-based cryptography?</p>
+            <p>Particularly interested in hearing about real-world implementations. Theory is great but I want to know what's actually working in production.</p>
+            <blockquote>
+              "The best time to encrypt was yesterday. The second best time is now." — Unknown
+            </blockquote>
+            <p>Drop your configs below. Let's build a community reference.</p>
+            <div class="post-signature">
+              ═══════════════════════════<br>
+              PGP: 0xDEAD BEEF CAFE 1337<br>
+              "In cryptography we trust"
+            </div>
+          </div>
+          <div class="post-footer">
+            <div style="display:flex; gap:1rem; font-size:0.75rem;">
+              <a href="#" style="color:var(--accent-green);">▲ 47</a>
+              <a href="#" style="color:var(--text-muted);">▼</a>
+            </div>
+            <div style="font-size:0.7rem; color:var(--text-muted);">
+              Last edited: 1 hour ago
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- POST 2 -->
+      <div class="post">
+        <div class="post-sidebar">
+          <div class="post-avatar">🎭</div>
+          <div class="post-username">phantom_x</div>
+          <div class="post-rank">Senior Member</div>
+          <div class="post-user-stats">
+            <span>Posts: 834</span>
+            <span>Rep: <span style="color:var(--accent-green)">+612</span></span>
+            <span>Joined: 2022</span>
+            <span style="color:var(--accent-green);">● Online</span>
+          </div>
+        </div>
+        <div class="post-content-area">
+          <div class="post-header">
+            <span>Posted 1 hour ago · #2</span>
+            <div class="post-actions">
+              <a href="#">Quote</a>
+              <a href="#">Report</a>
+            </div>
+          </div>
+          <div class="post-body">
+            <blockquote>
+              cipher_ghost wrote:<br>
+              Anyone else been looking into lattice-based cryptography?
+            </blockquote>
+            <p>Been running Kyber-1024 in my messaging stack for about 3 months now. Performance hit is noticeable but acceptable — roughly 2.3x slower key generation compared to X25519, but the actual encryption/decryption is surprisingly fast.</p>
+            <p>My current setup:</p>
+            <pre><code>Transport: WireGuard + custom PQ handshake
+Storage: XChaCha20-Poly1305
+Messaging: Signal Protocol + CRYSTALS-Kyber hybrid
+DNS: DNSCrypt with ODoH fallback</code></pre>
+            <p>The hybrid approach is key right now. Don't drop your classical crypto — layer PQ on top of it. If the PQ stuff breaks, you still have your proven algorithms as fallback.</p>
+            <div class="post-signature">
+              ═══════════════════════════<br>
+              "Trust no one. Verify everything."
+            </div>
+          </div>
+          <div class="post-footer">
+            <div style="display:flex; gap:1rem; font-size:0.75rem;">
+              <a href="#" style="color:var(--accent-green);">▲ 31</a>
+              <a href="#" style="color:var(--text-muted);">▼</a>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- POST 3 -->
+      <div class="post">
+        <div class="post-sidebar">
+          <div class="post-avatar">💻</div>
+          <div class="post-username">d3v_null</div>
+          <div class="post-rank">Member</div>
+          <div class="post-user-stats">
+            <span>Posts: 456</span>
+            <span>Rep: <span style="color:var(--accent-green)">+234</span></span>
+            <span>Joined: 2023</span>
+            <span style="color:var(--accent-green);">● Online</span>
+          </div>
+        </div>
+        <div class="post-content-area">
+          <div class="post-header">
+            <span>Posted 45 minutes ago · #3</span>
+            <div class="post-actions">
+              <a href="#">Quote</a>
+              <a href="#">Report</a>
+            </div>
+          </div>
+          <div class="post-body">
+            <p>I wrote a Python wrapper for the liboqs library that makes it pretty easy to experiment with PQ algorithms:</p>
+            <pre><code>from pq_wrapper import KeyExchange, Encrypt
+
+# Kyber key exchange
+kex = KeyExchange('kyber1024')
+public_key, secret_key = kex.generate_keypair()
+ciphertext, shared_secret = kex.encapsulate(public_key)
+
+# Hybrid encryption
+enc = Encrypt('aes256gcm+kyber1024')
+encrypted = enc.seal(plaintext, recipient_pk)
+decrypted = enc.open(encrypted, secret_key)</code></pre>
+            <p>Will open source it once I clean up the API. The goal is to make PQ crypto as easy to use as <code>nacl</code> or <code>cryptography.io</code>.</p>
+            <p>One thing I noticed — Kyber key sizes are significantly larger. We're talking ~1.5KB for public keys vs 32 bytes for X25519. Something to think about for constrained environments.</p>
+          </div>
+          <div class="post-footer">
+            <div style="display:flex; gap:1rem; font-size:0.75rem;">
+              <a href="#" style="color:var(--accent-green);">▲ 23</a>
+              <a href="#" style="color:var(--text-muted);">▼</a>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- POST 4 -->
+      <div class="post">
+        <div class="post-sidebar">
+          <div class="post-avatar">🧙</div>
+          <div class="post-username">zk_wizard</div>
+          <div class="post-rank">Moderator</div>
+          <div class="post-user-stats">
+            <span>Posts: 2,156</span>
+            <span>Rep: <span style="color:var(--accent-green)">+1,567</span></span>
+            <span>Joined: 2020</span>
+            <span style="color:var(--accent-green);">● Online</span>
+          </div>
+        </div>
+        <div class="post-content-area">
+          <div class="post-header">
+            <span>Posted 15 minutes ago · #4</span>
+            <div class="post-actions">
+              <a href="#">Quote</a>
+              <a href="#">Report</a>
+            </div>
+          </div>
+          <div class="post-body">
+            <p>Great thread. Let me add the zero-knowledge perspective here.</p>
+            <p>We've been using ZK-SNARKs for authentication in our latest project. The idea is simple: prove you know the password without ever transmitting it. Combined with PQ crypto for the transport layer, it's pretty robust.</p>
+            <p>Current ZK stack:</p>
+            <pre><code>Proof System: Groth16 (moving to PLONK)
+Curve: BN254 (PQ-vulnerable, I know)
+Circuit Compiler: Circom 2.0
+Verifier: On-chain (Ethereum L2)</code></pre>
+            <p>The elephant in the room is that most ZK systems rely on elliptic curves that are quantum-vulnerable. There's active research on lattice-based ZK proofs but they're not production-ready yet.</p>
+            <p>@d3v_null — definitely interested in your wrapper. DM me when it's ready.</p>
+            <div class="post-signature">
+              ═══════════════════════════<br>
+              Moderator · Cryptography Section<br>
+              "Zero knowledge, infinite power"
+            </div>
+          </div>
+          <div class="post-footer">
+            <div style="display:flex; gap:1rem; font-size:0.75rem;">
+              <a href="#" style="color:var(--accent-green);">▲ 18</a>
+              <a href="#" style="color:var(--text-muted);">▼</a>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REPLY BOX -->
+      <div class="reply-box" id="replyBox">
+        <h3>› Post Reply</h3>
+        <textarea placeholder="Enter your response... (Markdown supported)&#10;&#10;Remember: Do not share personal information. Use PGP for sensitive data." id="replyText"></textarea>
+        <div class="reply-actions">
+          <button class="btn" onclick="previewReply()">Preview</button>
+          <button class="btn btn-primary" onclick="submitReply()">Submit Reply</button>
+        </div>
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="pagination">
+        <span class="active">1</span>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">Next ›</a>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">📋 Thread Info</div>
+        <div class="sidebar-widget-body" style="font-size:0.8rem; color:var(--text-muted); line-height:2;">
+          <div>Author: <span style="color:var(--accent-cyan)">cipher_ghost</span></div>
+          <div>Created: <span style="color:var(--text-secondary)">2 hours ago</span></div>
+          <div>Replies: <span style="color:var(--accent-green)">47</span></div>
+          <div>Views: <span style="color:var(--accent-green)">892</span></div>
+          <div>Status: <span style="color:var(--accent-green)">● Open</span></div>
+          <div>Tags: <span style="color:var(--accent-amber)">#encryption #pq-crypto</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">👥 Thread Participants</div>
+        <div class="sidebar-widget-body">
+          <div class="online-user"><span class="online-dot"></span> <span class="username">cipher_ghost</span></div>
+          <div class="online-user"><span class="online-dot"></span> <span class="username">phantom_x</span></div>
+          <div class="online-user"><span class="online-dot"></span> <span class="username">d3v_null</span></div>
+          <div class="online-user"><span class="online-dot"></span> <span class="username">zk_wizard</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">🔗 Similar Threads</div>
+        <div class="sidebar-widget-body" style="font-size:0.8rem;">
+          <div style="padding:0.4rem 0; border-bottom:1px solid var(--border-color);">
+            <a href="#">Post-quantum TLS implementation</a>
+            <div style="color:var(--text-muted); font-size:0.7rem;">23 replies · 3 days ago</div>
+          </div>
+          <div style="padding:0.4rem 0; border-bottom:1px solid var(--border-color);">
+            <a href="#">AES vs ChaCha20 benchmarks</a>
+            <div style="color:var(--text-muted); font-size:0.7rem;">45 replies · 1 week ago</div>
+          </div>
+          <div style="padding:0.4rem 0;">
+            <a href="#">Signal Protocol deep dive</a>
+            <div style="color:var(--text-muted); font-size:0.7rem;">67 replies · 2 weeks ago</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="brand">VOID FORUM</div>
+        <div>Established 2019 · All rights reserved</div>
+        <div>Encrypted · Decentralized · Anonymous</div>
+      </div>
+      <div class="footer-right">
+        <div><a href="#">Terms of Service</a> · <a href="#">PGP Keys</a> · <a href="#">Canary</a></div>
+        <div>Server Time: <span id="serverTime">--:--:--</span> UTC</div>
+        <div style="color:var(--text-muted);">Connection: <span style="color:var(--accent-green);">■</span> Encrypted</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

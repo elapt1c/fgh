@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOID FORUM :: General Discussion</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💀</text></svg>">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <span class="skull">💀</span>
+        <h1>VOID FORUM</h1>
+        <span class="version">v3.1.7</span>
+      </a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="index.html">Forum</a></li>
+        <li><a href="category.html" class="active">Threads</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+      <div class="navbar-auth" id="authButtons">
+        <a href="login.html" class="btn">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleNav()">☰</button>
+    </div>
+  </nav>
+
+  <div class="main-container">
+    <div class="content-area">
+
+      <!-- BREADCRUMB -->
+      <div class="breadcrumb">
+        <a href="index.html">Forum</a>
+        <span class="sep">›</span>
+        <span>General Discussion</span>
+      </div>
+
+      <!-- THREAD LIST HEADER -->
+      <div class="thread-list-header">
+        <div class="section-header" style="flex:1; margin-bottom:0; padding-bottom:0; border-bottom:none;">
+          <h2>💬 General Discussion</h2>
+        </div>
+        <a href="new-thread.html" class="btn btn-primary">+ New Thread</a>
+      </div>
+
+      <p style="color:var(--text-muted); font-size:0.8rem; margin-bottom:1.5rem;">Open forum for all topics. Introduce yourself or discuss anything not covered elsewhere.</p>
+
+      <!-- PINNED THREADS -->
+      <div style="font-size:0.7rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:2px; margin-bottom:0.5rem; padding-left:0.5rem;">📌 Pinned</div>
+
+      <div class="thread-item pinned">
+        <div class="thread-status"></div>
+        <div class="thread-info">
+          <div class="thread-title">
+            <span class="thread-tag tag-pinned">Pinned</span>
+            <a href="thread.html">Forum Rules & Guidelines — READ BEFORE POSTING</a>
+          </div>
+          <div class="thread-meta">
+            <span>by <span style="color:var(--accent-cyan)">admin</span></span>
+            <span>·</span>
+            <span>Started Jan 15, 2024</span>
+          </div>
+        </div>
+        <div class="thread-counts">
+          <div><span class="count">0</span><span class="label">Replies</span></div>
+          <div><span class="count">4,891</span><span class="label">Views</span></div>
+        </div>
+        <div class="thread-last-post">
+          <div class="author">admin</div>
+          <div>Jan 15, 2024</div>
+        </div>
+      </div>
+
+      <div class="thread-item pinned">
+        <div class="thread-status"></div>
+        <div class="thread-info">
+          <div class="thread-title">
+            <span class="thread-tag tag-pinned">Pinned</span>
+            <span class="thread-tag tag-locked">Locked</span>
+            <a href="thread.html">Welcome to the Void — Introduction Thread</a>
+          </div>
+          <div class="thread-meta">
+            <span>by <span style="color:var(--accent-cyan)">admin</span></span>
+            <span>·</span>
+            <span>Started Mar 3, 2023</span>
+          </div>
+        </div>
+        <div class="thread-counts">
+          <div><span class="count">142</span><span class="label">Replies</span></div>
+          <div><span class="count">12,340</span><span class="label">Views</span></div>
+        </div>
+        <div class="thread-last-post">
+          <div class="author">v0id_walker</div>
+          <div>2 days ago</div>
+        </div>
+      </div>
+
+      <!-- REGULAR THREADS -->
+      <div style="font-size:0.7rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:2px; margin: 1.5rem 0 0.5rem; padding-left:0.5rem;">Latest Threads</div>
+
+      <div class="thread-item">
+        <div class="thread-status hot"></div>
+        <div class="thread-info">
+          <div class="thread-title">
+            <span class="thread-tag tag-hot">Hot</span>
+            <a href="thread.html">New encryption standards discussion — what are you using?</a>
+          </div>
+          <div class="thread-meta">
+            <span>by <span style="color:var(--accent-cyan)">cipher_ghost</span></span>
+            <span>·</span>
+            <span>Started 2 hours ago</span>
+          </div>
+        </div>
+        <div class="thread-counts">
+          <div><span class="count">47</span><span class="label">Replies</span></div>
+          <div><span class="count">892</span><span class="label">Views</span></div>
+        </div>
+        <div class="thread-last-post">
+          <div class="author">zk_wizard</div>
+          <div>15 min ago</div>
+        </div>
+      </div>
+
+      <div class="thread-item">
+        <div class="thread-status"></div>
+        <div class="thread-info">
+          <div class="thread-title">
+            <span class="thread-tag tag-new">New</span>
+            <a href="thread.html">Looking for team members — open source privacy project</a>
+          </div>
+          <div class="thread-meta">
+            <span>by <span style="color:var(--accent-cyan)">d3v_null</span></span>
+            <span>·</span>
+            <span>Started 45 minutes ago</span>
+          </div>
+        </div>
+        <div class="thread-counts">
+          <div><span class="count">12</span><span class="label">Replies</span></div>
+          <div><span class="count">234</span><span class="label">Views</span></div>
+        </div>
+        <div class="thread-last-post">
+          <div class="author">phantom_x</div>
+          <div>20 min ago</div>
+        </div>
+      </div>
+
+      <div class="thread-item">
+        <div class="thread-status"></div>
+        <div class="thread-info">
+          <div class="thread-title">
+            <a href="thread.html">Best practices for operational security in 2026</a>
+          </div>
+          <div class="thread-meta">
+            <span>by <span style="color:var(--accent-cyan)">phantom_x</span></span>
+            <span>·</span>
+            <span>Started 3 hours ago</span>
+          </div>
+        </div>
+        <div class="thread-counts">
+          <div><span class="count">31</span><span class="label">Replies</span></div>
+          <div><span class="count">567</span><span class="label">Views</span></div>
+        </div>
+        <div class="thread-last-post">
+          <div class="author">node_runner</div>
+          <div>1h ago</div>
+        </div>
+      </div>
+
+      <div class="thread-item">
+        <div class="thread-status cold"></div>
+        <div class="thread-info">
+          <div class="thread-title">
+            <a href="thread.html">Decentralized messaging apps comparison</a>
+          </div>
+          <div class="thread-meta">
+            <span>by <span style="color:var(--accent-cyan)">node_runner</span></span>
+            <span>·</span>
+            <span>Started 1 day ago</span>
+          </div>
+        </div>
+        <div class="thread-counts">
+          <div><span class="count">23</span><span class="label">Replies</span></div>
+          <div><span class="count">412</span><span class="label">Views</span></div>
+        </div>
+        <div class="thread-last-post">
+          <div class="author">darkm00n</div>
+          <div>5h ago</div>
+        </div>
+      </div>
+
+      <div class="thread-item">
+        <div class="thread-status cold"></div>
+        <div class="thread-info">
+          <div class="thread-title">
+            <a href="thread.html">Anyone using I2P? Thoughts?</a>
+          </div>
+          <div class="thread-meta">
+            <span>by <span style="color:var(--accent-cyan)">v0id_walker</span></span>
+            <span>·</span>
+            <span>Started 2 days ago</span>
+          </div>
+        </div>
+        <div class="thread-counts">
+          <div><span class="count">18</span><span class="label">Replies</span></div>
+          <div><span class="count">301</span><span class="label">Views</span></div>
+        </div>
+        <div class="thread-last-post">
+          <div class="author">cipher_ghost</div>
+          <div>12h ago</div>
+        </div>
+      </div>
+
+      <div class="thread-item">
+        <div class="thread-status"></div>
+        <div class="thread-info">
+          <div class="thread-title">
+            <a href="thread.html">Self-hosted email server setup tutorial</a>
+          </div>
+          <div class="thread-meta">
+            <span>by <span style="color:var(--accent-cyan)">darkm00n</span></span>
+            <span>·</span>
+            <span>Started 3 days ago</span>
+          </div>
+        </div>
+        <div class="thread-counts">
+          <div><span class="count">56</span><span class="label">Replies</span></div>
+          <div><span class="count">1,203</span><span class="label">Views</span></div>
+        </div>
+        <div class="thread-last-post">
+          <div class="author">d3v_null</div>
+          <div>2h ago</div>
+        </div>
+      </div>
+
+      <div class="thread-item">
+        <div class="thread-status cold"></div>
+        <div class="thread-info">
+          <div class="thread-title">
+            <a href="thread.html">Linux distros for maximum privacy — 2026 edition</a>
+          </div>
+          <div class="thread-meta">
+            <span>by <span style="color:var(--accent-cyan)">lost_signal</span></span>
+            <span>·</span>
+            <span>Started 5 days ago</span>
+          </div>
+        </div>
+        <div class="thread-counts">
+          <div><span class="count">89</span><span class="label">Replies</span></div>
+          <div><span class="count">2,456</span><span class="label">Views</span></div>
+        </div>
+        <div class="thread-last-post">
+          <div class="author">vendor_x</div>
+          <div>1d ago</div>
+        </div>
+      </div>
+
+      <div class="thread-item">
+        <div class="thread-status cold"></div>
+        <div class="thread-info">
+          <div class="thread-title">
+            <a href="thread.html">Hardware wallet recommendations</a>
+          </div>
+          <div class="thread-meta">
+            <span>by <span style="color:var(--accent-cyan)">zk_wizard</span></span>
+            <span>·</span>
+            <span>Started 1 week ago</span>
+          </div>
+        </div>
+        <div class="thread-counts">
+          <div><span class="count">34</span><span class="label">Replies</span></div>
+          <div><span class="count">789</span><span class="label">Views</span></div>
+        </div>
+        <div class="thread-last-post">
+          <div class="author">n3w_us3r</div>
+          <div>3d ago</div>
+        </div>
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="pagination">
+        <span class="active">1</span>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">...</a>
+        <a href="#">17</a>
+        <a href="#">Next ›</a>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">📊 Category Stats</div>
+        <div class="sidebar-widget-body" style="font-size:0.8rem; color:var(--text-muted); line-height:2;">
+          <div>Threads: <span style="color:var(--accent-green)">412</span></div>
+          <div>Posts: <span style="color:var(--accent-green)">5,891</span></div>
+          <div>Last Post: <span style="color:var(--text-secondary)">15m ago</span></div>
+          <div>Moderators: <span style="color:var(--accent-amber)">admin, phantom_x</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">🔥 Trending Tags</div>
+        <div class="sidebar-widget-body" style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+          <span class="thread-tag" style="color:var(--accent-green); border-color:var(--accent-green);">#encryption</span>
+          <span class="thread-tag" style="color:var(--accent-cyan); border-color:var(--accent-cyan);">#privacy</span>
+          <span class="thread-tag" style="color:var(--accent-amber); border-color:var(--accent-amber);">#opsec</span>
+          <span class="thread-tag" style="color:var(--accent-purple); border-color:var(--accent-purple);">#tor</span>
+          <span class="thread-tag" style="color:var(--accent-red); border-color:var(--accent-red);">#linux</span>
+          <span class="thread-tag" style="color:var(--accent-green); border-color:var(--accent-green);">#vpn</span>
+          <span class="thread-tag" style="color:var(--accent-cyan); border-color:var(--accent-cyan);">#crypto</span>
+          <span class="thread-tag" style="color:var(--accent-amber); border-color:var(--accent-amber);">#hosting</span>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">⚡ Online Users</div>
+        <div class="sidebar-widget-body">
+          <div class="online-user"><span class="online-dot"></span> <span class="username">cipher_ghost</span></div>
+          <div class="online-user"><span class="online-dot"></span> <span class="username">phantom_x</span></div>
+          <div class="online-user"><span class="online-dot"></span> <span class="username">d3v_null</span></div>
+          <div class="online-user"><span class="online-dot"></span> <span class="username">node_runner</span></div>
+          <div class="online-user"><span class="online-dot"></span> <span class="username">zk_wizard</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="brand">VOID FORUM</div>
+        <div>Established 2019 · All rights reserved</div>
+        <div>Encrypted · Decentralized · Anonymous</div>
+      </div>
+      <div class="footer-right">
+        <div><a href="#">Terms of Service</a> · <a href="#">PGP Keys</a> · <a href="#">Canary</a></div>
+        <div>Server Time: <span id="serverTime">--:--:--</span> UTC</div>
+        <div style="color:var(--text-muted);">Connection: <span style="color:var(--accent-green);">■</span> Encrypted</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

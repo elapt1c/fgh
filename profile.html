@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOID FORUM :: User Profile</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💀</text></svg>">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <span class="skull">💀</span>
+        <h1>VOID FORUM</h1>
+        <span class="version">v3.1.7</span>
+      </a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="index.html">Forum</a></li>
+        <li><a href="category.html">Threads</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="profile.html" class="active">Profile</a></li>
+      </ul>
+      <div class="navbar-auth" id="authButtons">
+        <a href="login.html" class="btn">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleNav()">☰</button>
+    </div>
+  </nav>
+
+  <div class="main-container">
+    <div class="content-area">
+
+      <!-- BREADCRUMB -->
+      <div class="breadcrumb">
+        <a href="index.html">Forum</a>
+        <span class="sep">›</span>
+        <a href="members.html">Members</a>
+        <span class="sep">›</span>
+        <span>cipher_ghost</span>
+      </div>
+
+      <!-- PROFILE HEADER -->
+      <div class="profile-header">
+        <div class="profile-avatar">👻</div>
+        <div class="profile-info">
+          <h2>cipher_ghost</h2>
+          <div class="profile-rank">★ Elite Member</div>
+          <div class="profile-bio">
+            Cryptography researcher & privacy advocate. Building tools for a more private internet.
+            PGP: 0xDEAD BEEF CAFE 1337
+          </div>
+          <div style="margin-top:0.75rem; display:flex; gap:1rem;">
+            <button class="btn" style="padding:0.35rem 0.8rem; font-size:0.7rem;">Send Message</button>
+            <button class="btn" style="padding:0.35rem 0.8rem; font-size:0.7rem;">View PGP Key</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROFILE STATS -->
+      <div class="profile-stats-grid">
+        <div class="profile-stat">
+          <div class="value">1,247</div>
+          <div class="label">Posts</div>
+        </div>
+        <div class="profile-stat">
+          <div class="value">89</div>
+          <div class="label">Threads</div>
+        </div>
+        <div class="profile-stat">
+          <div class="value" style="color:var(--accent-green);">+892</div>
+          <div class="label">Reputation</div>
+        </div>
+        <div class="profile-stat">
+          <div class="value">2021</div>
+          <div class="label">Joined</div>
+        </div>
+      </div>
+
+      <!-- PROFILE DETAILS -->
+      <div class="sidebar-widget" style="margin-bottom:1.5rem;">
+        <div class="sidebar-widget-header">📋 Profile Details</div>
+        <div class="sidebar-widget-body" style="font-size:0.85rem; line-height:2.2;">
+          <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-color); padding:0.25rem 0;">
+            <span style="color:var(--text-muted);">Status</span>
+            <span style="color:var(--accent-green);">● Online</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-color); padding:0.25rem 0;">
+            <span style="color:var(--text-muted);">Last Active</span>
+            <span>2 minutes ago</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-color); padding:0.25rem 0;">
+            <span style="color:var(--text-muted);">Member Since</span>
+            <span>March 14, 2021</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-color); padding:0.25rem 0;">
+            <span style="color:var(--text-muted);">Location</span>
+            <span style="color:var(--accent-amber);">Redacted</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-color); padding:0.25rem 0;">
+            <span style="color:var(--text-muted);">Timezone</span>
+            <span>UTC+0</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:0.25rem 0;">
+            <span style="color:var(--text-muted);">PGP Fingerprint</span>
+            <span style="color:var(--accent-green); font-size:0.75rem;">0xDEAD BEEF CAFE 1337</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECENT POSTS -->
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">📝 Recent Posts</div>
+        <div class="sidebar-widget-body">
+          <div style="padding:0.75rem 0; border-bottom:1px solid var(--border-color);">
+            <a href="thread.html" style="font-size:0.9rem;">New encryption standards discussion — what are you using?</a>
+            <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.3rem;">
+              in <a href="category.html">General Discussion</a> · 2 hours ago · 47 replies
+            </div>
+          </div>
+          <div style="padding:0.75rem 0; border-bottom:1px solid var(--border-color);">
+            <a href="thread.html" style="font-size:0.9rem;">Tor relay setup guide — complete walkthrough</a>
+            <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.3rem;">
+              in <a href="category.html">Networking & Infrastructure</a> · 1 day ago · 34 replies
+            </div>
+          </div>
+          <div style="padding:0.75rem 0; border-bottom:1px solid var(--border-color);">
+            <a href="thread.html" style="font-size:0.9rem;">BLAKE3 vs SHA-256 — performance benchmarks</a>
+            <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.3rem;">
+              in <a href="category.html">Cryptography & Blockchain</a> · 3 days ago · 21 replies
+            </div>
+          </div>
+          <div style="padding:0.75rem 0; border-bottom:1px solid var(--border-color);">
+            <a href="thread.html" style="font-size:0.9rem;">Self-hosted git alternatives to GitHub</a>
+            <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.3rem;">
+              in <a href="category.html">Programming & Development</a> · 5 days ago · 56 replies
+            </div>
+          </div>
+          <div style="padding:0.75rem 0;">
+            <a href="thread.html" style="font-size:0.9rem;">WireGuard configuration hardening tips</a>
+            <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.3rem;">
+              in <a href="category.html">Security & Privacy</a> · 1 week ago · 78 replies
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">🏆 Badges</div>
+        <div class="sidebar-widget-body" style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+          <span class="thread-tag" style="color:var(--accent-amber); border-color:var(--accent-amber);">🔐 Crypto Expert</span>
+          <span class="thread-tag" style="color:var(--accent-green); border-color:var(--accent-green);">✓ Verified PGP</span>
+          <span class="thread-tag" style="color:var(--accent-cyan); border-color:var(--accent-cyan);">🌟 Top Poster</span>
+          <span class="thread-tag" style="color:var(--accent-purple); border-color:var(--accent-purple);">🎯 Trusted</span>
+          <span class="thread-tag" style="color:var(--accent-red); border-color:var(--accent-red);">🔥 OG Member</span>
+          <span class="thread-tag" style="color:var(--accent-green); border-color:var(--accent-green);">💡 Helper</span>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">📊 Activity Graph</div>
+        <div class="sidebar-widget-body" style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-muted); line-height:1.4;">
+          <div style="margin-bottom:0.5rem; color:var(--text-secondary);">Posts per week (last 8 weeks):</div>
+          <div>W1 <span style="color:var(--accent-green);">██████████████████</span> 34</div>
+          <div>W2 <span style="color:var(--accent-green);">████████████████</span> 28</div>
+          <div>W3 <span style="color:var(--accent-green);">██████████████████████</span> 41</div>
+          <div>W4 <span style="color:var(--accent-green);">████████████</span> 19</div>
+          <div>W5 <span style="color:var(--accent-green);">██████████████████████████</span> 52</div>
+          <div>W6 <span style="color:var(--accent-green);">████████████████████</span> 37</div>
+          <div>W7 <span style="color:var(--accent-green);">██████████████</span> 23</div>
+          <div>W8 <span style="color:var(--accent-green);">████████</span> 12</div>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">🔑 Crypto Identity</div>
+        <div class="sidebar-widget-body" style="font-size:0.7rem; color:var(--text-muted); line-height:1.8; word-break:break-all;">
+          <div>PGP: <span style="color:var(--accent-green);">0xDEAD BEEF CAFE 1337</span></div>
+          <div>SSH: <span style="color:var(--text-secondary);">SHA256:xK9v...3mPq</span></div>
+          <div>BTC: <span style="color:var(--accent-amber);">bc1q...7f3k</span></div>
+          <div>XMR: <span style="color:var(--accent-amber);">4A7f...9xBc</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="brand">VOID FORUM</div>
+        <div>Established 2019 · All rights reserved</div>
+        <div>Encrypted · Decentralized · Anonymous</div>
+      </div>
+      <div class="footer-right">
+        <div><a href="#">Terms of Service</a> · <a href="#">PGP Keys</a> · <a href="#">Canary</a></div>
+        <div>Server Time: <span id="serverTime">--:--:--</span> UTC</div>
+        <div style="color:var(--text-muted);">Connection: <span style="color:var(--accent-green);">■</span> Encrypted</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
